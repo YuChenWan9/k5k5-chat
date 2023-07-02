@@ -1,0 +1,25 @@
+{
+    "appId": "",
+    "productName": "K5K5 Chat",
+    "protocols": {
+        "name": "k5k5chat",
+        "schemes": [
+            "k5k5chat"
+        ]
+    },
+    "asar": true,
+    "win": {
+        "target": "nsis",
+        "icon": "resources/icons/logo@256.ico"
+    },
+    "mac": {
+        "target": "dmg",
+        "icon": "resources/icons/logo@512.png"
+    },
+    "extraResources": [
+        "./resources/**"
+    ],
+    "directories": {
+        "output": "release/"
+    }
+}
