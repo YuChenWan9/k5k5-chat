@@ -38,7 +38,8 @@ class AppContext {
         
         this.mainWindow = new BrowserWindow({
             width: 800,
-            height: 800
+            height: 800,
+            titleBarStyle: "hidden"
         })
 
         if(app.isPackaged) {
