@@ -8,6 +8,7 @@ const WindowBaseOptions: BrowserWindowConstructorOptions = {
   titleBarStyle: "hidden",
   frame: false,
   show: false,
+  transparent: true,
   resizable: false, // 禁止缩放
   maximizable: false, // 禁止放大按钮
   webPreferences: {

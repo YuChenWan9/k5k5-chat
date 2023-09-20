@@ -1,0 +1,17 @@
+.side-menu {
+    height: 100%;
+    min-width: 200px;
+    background: #262626;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+
+    .re-size-div {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: ew-resize;
+        width: 1px;
+        height: calc(100% - 30px);
+    }
+}

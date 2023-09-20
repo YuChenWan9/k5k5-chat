@@ -5,12 +5,25 @@ import AccountSecretLogin from './components/AccountSecretLogin';
 import ScanCodeLogin from './components/ScanCodeLogin';
 import { useNavigate } from 'react-router-dom';
 import TabBar from '~/components/TabBar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '~/redux/user';
+import { useEffect } from 'react';
+import type { StoreRootState } from '~/redux';
 
 function Login() {
+
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.electron.getLoginInfo(isLogin => {
+            dispatch(login(isLogin));
+        })
+    })
+    const isLogin = useSelector<StoreRootState, boolean>(state => state.user.isLogin);
+    if (isLogin) navigate('/home')
+
     const cc = () => {
         window.electron.authControl('login');
         navigate('/home')
@@ -24,7 +37,7 @@ function Login() {
             {/* <ScanCodeLogin /> */}
             <Button onClick={cc} type="primary">登录</Button>
             <div>
-                
+
             </div>
         </div>
     )

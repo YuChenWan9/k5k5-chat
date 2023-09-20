@@ -8,7 +8,7 @@ export interface ElectronRendererContext {
     appWindowMove: (allowMove: boolean) => void,
     appWindowResize: (allowResize: boolean) => void,
     appWindowShow: () => void,
-    ipcRenderer: IpcRenderer
+    getLoginInfo: (callback: (isLogin: boolean) => void) => void
 }
 
 

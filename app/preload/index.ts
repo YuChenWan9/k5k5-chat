@@ -8,7 +8,8 @@ const electronContext: ElectronRendererContext = {
   appWindowMove: allowMove => ipcRenderer.send('app-win-move', allowMove),
   appWindowResize: allowResize => ipcRenderer.send('app-win-resize', allowResize),
   appWindowShow: () => ipcRenderer.send('win-show'),
-  ipcRenderer
+  
+  getLoginInfo: callback => ipcRenderer.on('set-login', (_, isLogin) => callback(isLogin))
 };
 
 contextBridge.exposeInMainWorld("electron", electronContext);

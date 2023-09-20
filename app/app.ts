@@ -56,10 +56,7 @@ class AppContext {
       config?.options ? config?.options : WindowBaseOptions
     );
 
-    // this.mainWindow?.webContents.send('set-login', config?.isLogin || false);
-
     // this.mainWindow.webContents.openDevTools();
-
     this.mainWindow.on("close", (e: { preventDefault: () => void }) => {
       if (!this.willQuit) {
         e.preventDefault();
@@ -73,13 +70,14 @@ class AppContext {
 
     if (app.isPackaged) {
       await this.mainWindow.loadFile(
-        `${this.PROD_LOAD_FILE_PATH}${config?.path || ""}`
+        `${this.PROD_LOAD_FILE_PATH}${config?.path ?? ""}`
       );
     } else {
       await this.mainWindow.loadURL(
-        `${this.DEV_URL}${config?.path || ""}`
+        `${this.DEV_URL}${config?.path ?? ""}`
       );
     }
+    this.mainWindow.webContents.send('set-login', config?.isLogin ?? false)
   }
 
   async register(module: ModuleFunction) {

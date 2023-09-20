@@ -12,42 +12,44 @@ import { WindowBaseOptions } from "../../config";
  */
 const SystemModule: ModuleFunction = (context) => {
   ipcMain.on("auth-control", (_, action: AuthControlAction) => {
-    // context.mainWindow?.close();
+    context.mainWindow?.setResizable(true);
+    context.mainWindow?.setSize(1, 1);
 
-    // context.mainWindow?.setResizable(true);
-    // context.mainWindow?.setSize(1, 1);
+    context.mainWindow?.close();
+
     switch (action) {
       case "login":
-        // context.createWindow({
-        //   options: {
-        //     ...WindowBaseOptions,
-        //     width: 960,
-        //     height: 704,
-        //     maxHeight: 540,
-        //     minWidth: 840,
-        //     resizable: true,
-        //     maximizable: true,
-        //   },
-        //   path: "home",
-        // });
-        // context.mainWindow?.webContents.send('set-login', true);
+        context.createWindow({
+          options: {
+            ...WindowBaseOptions,
+            width: 960,
+            height: 704,
+            minHeight: 540,
+            minWidth: 840,
+            resizable: true,
+            maximizable: true,
+          },
+          path: "home",
+          isLogin: true
+        });
 
-        context.mainWindow?.setResizable(true);
-        context.mainWindow?.setResizable(true);
-        context.mainWindow?.setMaximizable(true);
-        context.mainWindow?.setMinimumSize(840, 540);
-        context.mainWindow?.setSize(960, 704);
-        context.mainWindow?.center();
+        // context.mainWindow?.setResizable(true);
+        // context.mainWindow?.setResizable(true);
+        // context.mainWindow?.setMaximizable(true);
+        // context.mainWindow?.setMinimumSize(840, 540);
+        // context.mainWindow?.setSize(960, 704);
+        // context.mainWindow?.center();
+        // context.mainWindow?.webContents.send('set-login', false);
 
         break;
       case "logout":
-        context.mainWindow?.setMinimumSize(320, 448);
-        context.mainWindow?.setSize(320, 448);
-        context.mainWindow?.setResizable(false);
-        context.mainWindow?.setMaximizable(false);
-        context.mainWindow?.center();
-        
-        // context.createWindow({ path: "login" });
+        // context.mainWindow?.setMinimumSize(320, 448);
+        // context.mainWindow?.setSize(320, 448);
+        // context.mainWindow?.setResizable(false);
+        // context.mainWindow?.setMaximizable(false);
+        // context.mainWindow?.center();
+
+        context.createWindow({ path: "login", isLogin: false });
         break;
 
       default:
