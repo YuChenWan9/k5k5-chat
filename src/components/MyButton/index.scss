@@ -1,0 +1,11 @@
+.btn {
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    &.btn-primary {
+        background-color: #34beea;
+    }
+}

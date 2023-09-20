@@ -1,0 +1,32 @@
+.login {
+    user-select: none;
+    background-image: url('../../assets/images/bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    box-sizing: border-box;
+
+    .account-secret-login {
+        padding-top: 65px;
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background-color: pink;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            text-align: center;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .login-btn {
+
+    }
+}

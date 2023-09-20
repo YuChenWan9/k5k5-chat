@@ -20,7 +20,20 @@ export default defineConfig({
   })],
   clearScreen: false,
   server: {
-    port: 3000,
-    strictPort: true
-  }
+    port: 10000,
+    strictPort: true,
+    proxy: {
+      '^/api': {
+        target: "http://localhost:8088",
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '')
+      }
+      
+    }
+  },
+  resolve: {
+    alias: {
+      '~': path.resolve(__dirname, './src')
+    }
+  },
 })
