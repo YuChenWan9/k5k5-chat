@@ -1,11 +1,13 @@
-import './index.scss';
 import TabBar from "../TabBar";
+import './index.scss'
+
 function SideMenu() {
     return (
-        <div className='side-menu'>
+        <div className="side-bar">
             <TabBar />
-            <div className='re-size-div'></div>
+            
         </div>
     )
 }
+
 export default SideMenu;

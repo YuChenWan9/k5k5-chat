@@ -8,8 +8,8 @@ import './index.scss'
 function Layout() {
     return (
         <div className='layout'>
-            <SideBar />
             <SideMenu />
+            <SideBar />
             <Content>
                 <Home />
             </Content>

@@ -12,10 +12,7 @@ import { WindowBaseOptions } from "../../config";
  */
 const SystemModule: ModuleFunction = (context) => {
   ipcMain.on("auth-control", (_, action: AuthControlAction) => {
-    context.mainWindow?.setResizable(true);
-    context.mainWindow?.setSize(1, 1);
-
-    context.mainWindow?.close();
+    context.mainWindow?.destroy();
 
     switch (action) {
       case "login":

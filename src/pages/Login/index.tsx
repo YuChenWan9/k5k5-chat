@@ -33,11 +33,10 @@ function Login() {
     return (
         <div className="login">
             <TabBar allowResize={false} />
-            <AccountSecretLogin />
-            {/* <ScanCodeLogin /> */}
-            <Button onClick={cc} type="primary">登录</Button>
-            <div>
-
+            <div className='login-main'>
+                <AccountSecretLogin />
+                {/* <ScanCodeLogin /> */}
+                <Button style={{ width: '100%', height: '40px' }} onClick={cc} type="primary">登录</Button>
             </div>
         </div>
     )

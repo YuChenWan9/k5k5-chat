@@ -1,4 +1,4 @@
-import { app, BrowserWindow, BrowserWindowConstructorOptions } from "electron";
+import { app, BrowserWindow, BrowserWindowConstructorOptions, Menu } from "electron";
 import { join } from "path";
 import { globImport } from "./utils/import";
 import { WindowBaseOptions } from "./config";
@@ -63,6 +63,8 @@ class AppContext {
         this.willQuit = true;
         this.mainWindow?.hide();
         this.mainWindow?.setSkipTaskbar(true);
+      } else {
+        this.mainWindow = null;
       }
     });
 
@@ -78,6 +80,28 @@ class AppContext {
       );
     }
     this.mainWindow.webContents.send('set-login', config?.isLogin ?? false)
+
+    const menuTpl = [
+      {
+        label: 'QQ',
+        submenu: [
+          {
+            label: '退出',
+            accelerator: 'CmdOrCtrl+Q',
+            click: () => {
+              app.exit();
+            }
+          }
+        ]
+      }
+    ];
+    
+    // if(this.IS_MAC) {
+
+    // }
+    const appMenu = Menu.buildFromTemplate(menuTpl);
+
+    Menu.setApplicationMenu(appMenu);
   }
 
   async register(module: ModuleFunction) {
