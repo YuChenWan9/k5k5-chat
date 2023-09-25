@@ -10,6 +10,9 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-async-promise-executor': 'off'
   },
-  ignorePatterns: ['dist-electron']
+  ignorePatterns: ['dist-electron', 'src/assets']
 }

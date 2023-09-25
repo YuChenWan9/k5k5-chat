@@ -1,0 +1,21 @@
+@mixin getBackgroundColor($color) {
+  @each $themeName, $theme in $themes {
+    [data-skin="#{$themeName}"] & {
+      background-color: map-get($theme, $color);
+    }
+  }
+}
+
+@mixin getBackgroundImg($url) {
+  @each $themeName, $theme in $themes {
+    [data-skin="#{$themeName}"] & {
+      background-image: map-get($theme, $url);
+    }
+  }
+}
+
+@mixin flex($alignItem: center, $justifyContent: center) {
+  display: flex;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}

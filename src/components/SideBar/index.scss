@@ -1,9 +1,118 @@
 .side-bar {
-    width: 70px;
-    padding: 5px;
-    height: 100%;
+  height: 100%;
+  width: 200px;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+
+  .tab-bar__inner {
+    padding: 20px 20px 10px;
+    width: 100%;
+    display: flex;
     box-sizing: border-box;
-    background: #222323;
-    -webkit-user-select: none;
-    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    input {
+      width: calc(100% - 75px);
+      height: 20px;
+      border-radius: 4px;
+      font-size: 12px;
+      border: 1px solid transparent;
+      background: #1e1e1e;
+      padding: 2px;
+      padding: 3px 10px 3px 24px;
+      &::placeholder {
+        font-size: 12px;
+      }
+      &:focus {
+        border: 1px solid #0066cc;
+      }
+      caret-color: #0066cc;
+
+      margin-right: 5px;
+    }
+    button {
+      width: 28px;
+      height: 28px;
+      background: #1e1e1e;
+      border-radius: 4px;
+      color: #666;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: #414141;
+      }
+
+      &:active {
+        background-color: #303030;
+      }
+    }
+
+    .global-search {
+      position: absolute;
+      background-color: #262626;
+      height: 70px;
+      width: 100%;
+      bottom: -70px;
+      left: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      .global-search__inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        padding: 5px;
+        box-sizing: border-box;
+        color: #fff;
+        &:hover {
+          background-color: #414141;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .icc {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #2372d1;
+        }
+
+        &_info {
+            width: calc(100% - 50px);
+            > div {
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .title {
+                margin-bottom: 5px;
+            }
+
+            > div:last-of-type {
+                font-size: 12px;
+                color: #808080;
+            }
+        }
+      }
+    }
+  }
+
+  .side-bar-main {
+    padding: 0 20px;
+  }
+
+  .re-size-div {
+    width: 1px;
+    cursor: ew-resize;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }

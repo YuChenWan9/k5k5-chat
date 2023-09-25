@@ -1,4 +1,4 @@
-import avatarImg from '../../../assets/images/login.png';
+import avatarImg from '~/assets/images/login.png';
 import K5K5Input from '~/components/K5K5Input';
 
 function AccountSecretLogin () {

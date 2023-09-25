@@ -1,5 +1,4 @@
 import './index.scss';
-import React from 'react';
 
 type btnTypes = 'primary' | 'success' | 'warn' | 'dangr';
 

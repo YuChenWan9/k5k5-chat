@@ -14,10 +14,12 @@ class AppContext {
   private willQuit = false;
 
   // dev mode - url
-  readonly DEV_URL = `http://localhost:10000/`;
+  readonly DEV_URL = `http://localhost:10000/#/`;
 
   // production mode - load file
   readonly PROD_LOAD_FILE_PATH = join(__dirname, "../index.html");
+
+  readonly HASH_PATH_HEAD = '#';
 
   // electron window
   mainWindow: BrowserWindow | null = null;
@@ -83,7 +85,7 @@ class AppContext {
 
     const menuTpl = [
       {
-        label: 'QQ',
+        label: 'K5K5',
         submenu: [
           {
             label: '退出',

@@ -1,27 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-// import Home from './pages/Home';
-import Layout from './components/Layout';
-import { Navigate } from 'react-router-dom';
-import type { StoreRootState } from '~/redux';
-import { useSelector, useDispatch } from 'react-redux';
-// import { useEffect } from 'react';
-// import { login } from '~/redux/user';
+import { Suspense, useEffect } from "react";
+import K5K5SysRoutes from "./components/K5K5SysRoutes";
 
 function App() {
-  // const dispatch = useDispatch();
-
-  const isLogin = useSelector<StoreRootState, boolean>(state => state.user.isLogin);
+  useEffect(() => {
+    window.document.documentElement.setAttribute("data-skin", "dart-theme");
+  });
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />}></Route>
-        <Route path='/home' element={<Layout />} ></Route>
-        <Route path='/login' element={<Login />} ></Route>
-      </Routes>
-    </BrowserRouter>
-
-
+    <Suspense>
+      <K5K5SysRoutes />
+    </Suspense>
   );
 }
 

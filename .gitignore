@@ -17,6 +17,8 @@ dist-electron
 /resources/windows/chromium
 target
 index.node
+.npmrc
+.yarnrc
 
 # Editor directories and files
 .vscode/*

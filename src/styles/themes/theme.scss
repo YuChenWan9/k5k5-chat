@@ -1,0 +1,13 @@
+$themes: (
+    dart-theme: (
+        /* 背景相关 */
+        theme-bg: var(--data-theme-color, #1a1a1a), // 主题色
+        side-menu-bg: var(--data-side-menu-theme, #222323), // 侧边菜单背景色
+        side-menu-item-active-bg: var(--data-side-menu-item-active-bg, #2d2d2d), // 侧边菜单 item hover active背景
+        side-bar-bg: var(--data-side-bar-bg, #262626), // 侧边栏背景色
+        login-img-bg: var(--data-login-img-bg, url('~/assets/images/bg.jpg')), // 登录背景图
+    ),
+    // light-theme: (
+
+    // )
+)!default;

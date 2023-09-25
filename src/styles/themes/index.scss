@@ -1,0 +1,28 @@
+@import "./theme.scss";
+@import "../mixins/index.scss";
+
+.k5k5-theme__bg {
+  @include getBackgroundColor("theme-bg");
+}
+.k5k5-login-img__bg {
+  @include getBackgroundImg("login-img-bg");
+}
+.k5k5-side-menu__bg {
+  @include getBackgroundColor("side-menu-bg");
+
+  .k5k5-side-menu__item {
+    border-radius: 10px;
+    cursor: pointer;
+    @include flex();
+    &:hover, &.active {
+      @include getBackgroundColor("side-menu-item-active-bg");
+    }
+    &:active {
+      opacity: .8;
+    }
+  }
+  
+}
+.k5k5-side-bar__bg {
+  @include getBackgroundColor("side-bar-bg");
+}

@@ -1,0 +1,36 @@
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  // overflow: hidden;
+  margin: 10px auto 0;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+
+    // mask-image: radial-gradient(circle, transparent 9px, black 9px);
+  }
+
+  .login-status {
+    position: absolute;
+    padding: 2px;
+    width: 9px;
+    height: 9px;
+    bottom: 0px;
+    right: 4px;
+    overflow: hidden;
+    background: #262626;
+    border-radius: 50%;
+    > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #1de188;
+      cursor: pointer;
+    }
+  }
+}

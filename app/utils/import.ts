@@ -7,7 +7,7 @@ export interface GlobImportOptions extends GlobOptions {
 }
 
 export const globImport = (pattern: string, options: GlobImportOptions) =>
-    // eslint-disable-next-line no-async-promise-executor, @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     new Promise<any[]>(async (resolve, reject) => {
         try {
             const res = await glob(pattern, options);

@@ -1,17 +1,19 @@
 import SideBar from '../SideBar';
 import Content from '../Content';
-import Home from '~/pages/Home';
+// import Home from '~/pages/Home';
 import SideMenu from '../SideMenu';
 
 import './index.scss'
 
-function Layout() {
+type LayoutPropsType = React.PropsWithChildren;
+
+function Layout({ children }: LayoutPropsType) {
     return (
         <div className='layout'>
             <SideMenu />
             <SideBar />
             <Content>
-                <Home />
+                {children}
             </Content>
         </div>
     )

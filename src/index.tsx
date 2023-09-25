@@ -1,17 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from './App.tsx';
-import Store from '~/redux/index.ts';
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
+import Store from "~/redux/index.ts";
 
-import 'normalize.css';
-import '~/assets/scss/index.scss';
+import App from "./App.tsx";
+import CustomConfigProvider from "~/components/CustomConfigProvider/CustomConfigProvider.tsx";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <Provider store={Store}>
-        {/* <React.StrictMode> */}
-            <App />
-        {/* </React.StrictMode> */}
-    </Provider>
+import "normalize.css";
+import "~/styles/index.scss";
+import "~/assets/font/iconfont.css";
 
-)
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <Provider store={Store}>
+    {/* <React.StrictMode> */}
+    <CustomConfigProvider>
+      <App />
+    </CustomConfigProvider>
+    {/* </React.StrictMode> */}
+  </Provider>
+);
