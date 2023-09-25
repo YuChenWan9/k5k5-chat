@@ -28,7 +28,6 @@ const SystemModule: ModuleFunction = (context) => {
           },
           isLogin: true
         });
-
         context.mainWindow?.webContents.openDevTools();
 
         break;
